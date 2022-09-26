@@ -1,3 +1,8 @@
+/*
+Молодец: обошлась хитростью, добавь проверки тогда что у тебя при {backspace} 
+и нажатии на  cy.get('[data-testid="buttonElement"]').click(); выпадают ошибки, а то что за тест без проверок!
+*/
+
 describe ('Authorisation form', () => {
 
 it('Checks authorisation form', () => {
