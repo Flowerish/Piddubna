@@ -1,5 +1,5 @@
 /// <reference types = 'Cypress'/>
-import toolBar from '../base/toolBar'
+import trimDress from '../base/trimDressPage'
 describe('Toolbar', () => {
  
     before(() => {
@@ -9,6 +9,9 @@ describe('Toolbar', () => {
       cy.get('[aria-label="Close"]', {timeout: 5000}).click();
      });
      it('open page', () => {
-     toolBar.openPageInSectionHome('beauty');
+    //  toolBar.openPageInSectionHome('beauty');
+    cy.get('#mainnav > ul > li:nth-child(4) > ul').invoke('show');
+    cy.get('#mainnav > ul > li:nth-child(4) > ul > li:nth-child(2) > a').click();
+    cy.get(trimDress.addToCart, {timeout:5000}).click();
     });
   });
