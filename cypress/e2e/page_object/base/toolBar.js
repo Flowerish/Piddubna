@@ -38,6 +38,15 @@ class toolBar {
 /**
  * не уверена применится ли оно ко всем линкам, наверное да
  */
+    
+    
+    /*
+    Comments:
+    1) создать новый класс в отдельном файле
+    2) Классы должны называться уникально они могут находитьсся в одном файле
+    3) По возможности заранить
+    4) cy.get(this.burgerMenuSubLink).invoke('show'); тут обрати внимание, что тебе возвращат список, а нужен элемент один восользуйся - eq().
+    */
     get burgerMenuLink() {
         return 'app-left-menu .sidebar-bar'
     }
@@ -52,10 +61,8 @@ class toolBar {
 
     openLinkInBurgerMenu (burgerPage) {
         cy.get(this.burgerMenuLink).click();
-        cy.get(thos.burgerMenuSubLink).invoke('show');
+        cy.get(this.burgerMenuSubLink).invoke('show');
         this.openLinkInBurgerMenu(burgerPage).click();
     }
-    
-
-
+  
 } module.exports = new toolBar();
